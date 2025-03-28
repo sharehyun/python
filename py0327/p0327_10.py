@@ -14,15 +14,12 @@
 
 import random
 num = []
+ran_num = random.randint(1,100)
 attempt = 0
 
-ran_num = random.randint(1,100)
-
-in_num = int(input("숫자를 입력하세요.>> "))
-num.append(in_num)
-
 for attempt in range(1,11):
-    in_num=int(input("랜덤 숫자 맞추기!! 숫자를 입력하세요.>> "))
+    in_num = int(input("숫자를 입력하세요.>> "))
+    num.append(in_num)
     if in_num==ran_num:
         print("정답입니다. 랜덤 숫자 : {}".format(ran_num))
         break
@@ -30,3 +27,7 @@ for attempt in range(1,11):
         print("더 작은 수를 입력하세요. 입력 숫자 : {}".format(in_num))
     else:
         print("더 큰 수를 입력하세요. 입력 숫자 : {}".format(in_num))
+
+print("도전 회수 : {}".format(attempt))
+print("입력된 숫자 : {}".format(num))
+print("랜덤 숫자 : {}".format(ran_num))

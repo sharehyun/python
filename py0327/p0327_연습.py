@@ -14,5 +14,17 @@
 
 import random
 num = []
+ran_num = random.randint(1,100)
 attempt = 0
 
+for attempt in range(1,10+1):
+    in_num = int(input("숫자를 입력하세요.>> "))
+    
+    if in_num == ran_num:
+        print("정답입니다. 정답 숫자 : {}".format(ran_num))
+        break
+    elif in_num > ran_num:
+        print("더 작은 숫자를 입력하세요. 입력 숫자 : {}".format(in_num))
+    else:
+        print("더 큰 숫자를 입력하세요. 입력 숫자 : {}".format(in_num))
+print("정답 숫자 : {}".format(ran_num))

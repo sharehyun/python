@@ -55,7 +55,9 @@ while True:
     elif choice == 3:
         print("[ 학생성적수정 ]")
         name = input("수정할 학생 이름을 입력하세요.")
-        for i,s in enumerate(students)   #
+        for i,s in enumerate(students):   #
             if name in s:
                 print(f"{name} 학생 이름이 목록에 있습니다.")
-                choice = int(input())
+                choice = int(input(f"{name} 학생 성적을 삭제하시겠습니까?(0. 취소, 1. 삭제)>> "))
+                if choice == 1:
+                    del s[i]

@@ -1,8 +1,14 @@
 ### 파일 - 저장해서 불러오기
 ### DB에서 가져오기
 
-### 전역변수 선언부분
+students = [
+    {"no":1,"name":"홍길동","kor":100,"eng":100,"math":100,"total":300,"avg":100.0,"rank":1},
+    {"no":2,"name":"유관순","kor":100,"eng":100,"math":99,"total":299,"avg":99.67,"rank":2},
+    {"no":3,"name":"이순신","kor":100,"eng":100,"math":99,"total":299,"avg":99.67,"rank":2},
+]
 
+count = 4     # 학생번호를 생성
+title = ['번호','이름','국어','영어','수학','합계','평균','등수']
 
 
 ### 함수 부분 ###
@@ -20,7 +26,6 @@ def stu_input(count):
         score_cal(0,score) # 국어점수입력, 확인
         score_cal(1,score) # 영어점수입력, 확인
         score_cal(2,score) # 수학점수입력, 확인
-
 
         # no, name, kor, eng, math
         # 합계, 평균 구하기
@@ -47,15 +52,6 @@ def score_cal(i,score):
         else: print("숫자만 가능합니다.")
 
 
-students = [
-    {"no":1,"name":"홍길동","kor":100,"eng":100,"math":100,"total":300,"avg":100.0,"rank":1},
-    {"no":2,"name":"유관순","kor":100,"eng":100,"math":99,"total":299,"avg":99.67,"rank":2},
-    {"no":3,"name":"이순신","kor":100,"eng":100,"math":99,"total":299,"avg":99.67,"rank":2},
-] # 리스트랑 하는 건 똑같음. 
-
-count = 4     # 학생번호를 생성
-title = ['번호','이름','국어','영어','수학','합계','평균','등수']
-
 while True:
     print()
     print("[ 학생성적 프로그램 ]")
@@ -71,6 +67,7 @@ while True:
     # 번호선택
     if choice == 1:
         stu_input(count)
+
     elif choice == 2:
         print("-"*30)
         print(" "*20,end="")
@@ -81,17 +78,15 @@ while True:
         for s in students:
             print(f"{s['no']}\t{s['name']}\t{s['kor']}\t{s['eng']}\t{s['math']}\t{s['total']}\t{s['avg']:.2f}\t{s['rank']}")
         print()
-    
+
     elif choice == 3:
         print("[ 학생성적 수정 ]")
         print("-"*30)
-
+        
         name = input("수정하려는 학생 이름을 입력하세요.(0. 이전화면 이동)>> ")
-        if name == "0": break # 학생성적입력에서 전체화면으로 이동
         temp = 0   # 찾고자하는 학생이 없을 경우
-
         for s in students:
-            if name in s['name']:   # 찾았을 경우
+            if name in s["name"]:   # 찾았을 경우
                 temp = 1            # temp = 1 변경 - 찾았을 경우
                 print(f"{name} 학생이 목록에 있습니다. 성적을 수정합니다.")
                 print("[ 수정할 과목 선택 ]")
@@ -132,6 +127,7 @@ while True:
             # 수정할 학생을 찾지 못했을 경우 - for문이 돌아갈 때마다 출력하지 않게 하기 위해 변수 temp 사용
             if temp == 0:
                 name = input(f"{name} 학생이 목록에 없습니다. 다시 입력하세요. >> ")
+                
     elif choice == 0:
         print("[ 프로그램 종료 ]")
         break

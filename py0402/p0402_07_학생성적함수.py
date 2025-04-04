@@ -84,6 +84,7 @@ while True:
         print("-"*30)
         
         name = input("수정하려는 학생 이름을 입력하세요.(0. 이전화면 이동)>> ")
+        if name == "0": break # 학생성적입력에서 전체화면으로 이동
         temp = 0   # 찾고자하는 학생이 없을 경우
         for s in students:
             if name in s["name"]:   # 찾았을 경우
@@ -124,9 +125,9 @@ while True:
                     s['avg'] = s['total']/3
                     print(f"영어점수 : {pre_math} 점을 {s['math']} 점으로 변경했습니다.")   
 
-            # 수정할 학생을 찾지 못했을 경우 - for문이 돌아갈 때마다 출력하지 않게 하기 위해 변수 temp 사용
-            if temp == 0:
-                name = input(f"{name} 학생이 목록에 없습니다. 다시 입력하세요. >> ")
+                # 수정할 학생을 찾지 못했을 경우 - for문이 돌아갈 때마다 출력하지 않게 하기 위해 변수 temp 사용
+                if temp == 0:
+                    name = input(f"{name} 학생이 목록에 없습니다. 다시 입력하세요. >> ")
                 
     elif choice == 0:
         print("[ 프로그램 종료 ]")

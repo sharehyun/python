@@ -6,6 +6,8 @@ students = [
     {"no":3,"name":"이순신","kor":100,"eng":100,"math":99,"total":299,"avg":99.67,"rank":2},
 ]
 
+count = 4
+
 while True:
     print("[ 학생성적 프로그램 ]")
     print("-"*30)
@@ -19,7 +21,12 @@ while True:
     print()
 
     if choice==1:
-        pass
+        print("[ 학생성적 입력 ]")
+        print("-"*30)
+        no = count
+        name = input(f"{no}번 학생 이름을 입력하세요.(0. 이전 화면으로 이동)>> ")
+        kor = 
+        
     elif choice==2:
         pass
     elif choice==3:

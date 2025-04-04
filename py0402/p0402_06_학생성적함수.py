@@ -86,12 +86,11 @@ while True:
         print("[ 학생성적 수정 ]")
         print("-"*30)
 
-        name = input("수정하려는 학생 이름을 입력하세요.(0. 이전화면 이동)>> ")
-        if name == "0": break # 학생성적입력에서 전체화면으로 이동
+        name = input("수정하려는 학생 이름을 입력하세요.>> ")
         temp = 0   # 찾고자하는 학생이 없을 경우
 
         for s in students:
-            if name in s['name']:   # 찾았을 경우
+            if s["name"]==name:   # 찾았을 경우
                 temp = 1            # temp = 1 변경 - 찾았을 경우
                 print(f"{name} 학생이 목록에 있습니다. 성적을 수정합니다.")
                 print("[ 수정할 과목 선택 ]")
@@ -100,6 +99,7 @@ while True:
                 print("3. 수학")
                 print("-"*30)
                 choice = int(input("원하는 번호를 입력하세요.>> "))
+                sub_list = ['','kor','eng','math']
                 
                 # 수정할 과목 확인
                 if choice == 1:
@@ -130,8 +130,8 @@ while True:
                     print(f"영어점수 : {pre_math} 점을 {s['math']} 점으로 변경했습니다.")   
 
             # 수정할 학생을 찾지 못했을 경우 - for문이 돌아갈 때마다 출력하지 않게 하기 위해 변수 temp 사용
-            if temp == 0:
-                name = input(f"{name} 학생이 목록에 없습니다. 다시 입력하세요. >> ")
+                if temp == 0:
+                    name = input(f"{name} 학생이 목록에 없습니다. 다시 입력하세요. >> ")
     elif choice == 0:
         print("[ 프로그램 종료 ]")
         break

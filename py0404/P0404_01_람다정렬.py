@@ -4,6 +4,28 @@ students = [
     {"no":3,"name":"이순신","kor":100,"eng":100,"math":99,"total":299,"avg":99.67,"rank":2},
 ]
 
+# sorted 기존의 리스트는 유지, 새로운 리스트 생성 - 데이터량이 많을수록
+s_list = sorted(students,key=lambda x:x['name'])
+print(s_list)
+print("-"*60)
+print(students)
+
+# sort() 기존의 리스트의 값을 변경시킴
+# 합계 정렬방법
+# print(students)
+# print("-"*60)
+# students.sort(key=lambda x:x['total'])  # 합계 순차정렬
+# print(students)
+# print("-"*60)
+# students.sort(key=lambda x:x['total'],reverse=True)  # 합계 순차정렬
+# print(students)
+
+# students.sort(key=lambda x:x['name'])    # 이름으로 순차정렬
+# print(students)
+# print("-"*60)
+# students.sort(key=lambda x:x["name"],reverse=True)  # 이름으로 역순정렬
+# print(students)
+
 # dict타입은 sort() 함수를 사용할 수 없음
 # students.sort()
 # print(students)

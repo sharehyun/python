@@ -18,14 +18,13 @@ no = ["","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
 
 # 카드 생성
 for i in range(52):
-    cList.append({"shape":i//13,"no":i%13+1})
+    cList.append({"shape":i//13,"no":i%13+1})  # 52장 카드를 딕셔너리로 만들어 cLis에 저장
 
 # 카드 랜덤으로 섞기
 import random
 random.shuffle(cList)
 
 # myCard, youCard
-
 # 5장을 입력
 myCard = []
 youCard = []
@@ -38,7 +37,7 @@ for i in range(5,10):
 # 내 카드 출력 - 번호에 해당되는 글자를 출력
 print("[ 내 카드 ]")
 for i in myCard:
-    print(f"[ {sh[ i["shape"] ]}, { no[i["no"]] } ]")
+    print(f"[ {sh[ i['shape'] ]}, { no[i['no']] } ]")
 print()
 
 # 상대 카드 출력
@@ -49,18 +48,18 @@ print()
 
 
 
-# 내카드, 상대카드를 비교해서 승리,패배,무승부
-score = {"myWin":0,"youWin":0,"draw":0}
-for i in range(5):
-    if myCard[i]['no'] > youCard[i]['no']:
-        score['myWin'] += 1
-    elif myCard[i]['no'] < youCard[i]['no']:
-        score['youWin'] += 1
-    else:
-        score['draw'] += 1
+# # 내카드, 상대카드를 비교해서 승리,패배,무승부
+# score = {"myWin":0,"youWin":0,"draw":0}
+# for i in range(5):
+#     if myCard[i]['no'] > youCard[i]['no']:
+#         score['myWin'] += 1
+#     elif myCard[i]['no'] < youCard[i]['no']:
+#         score['youWin'] += 1
+#     else:
+#         score['draw'] += 1
         
-print("[ 카드 승부 확인 ]")
-print(f"승리 : {score['myWin']}, 패배 : {score['youWin']}, 무승부 : {score['draw']}")
+# print("[ 카드 승부 확인 ]")
+# print(f"승리 : {score['myWin']}, 패배 : {score['youWin']}, 무승부 : {score['draw']}")
 
 
 # 승리한 카드 출력

@@ -12,9 +12,9 @@ while True:
     if choice == 1:
         stu_input()
         
-    if choice == 2:
+    elif choice == 2:
         stu_output()
     
-    if choice == 3:
+    elif choice == 0:
         print("[ 프로그램 종료 ]")
         break
